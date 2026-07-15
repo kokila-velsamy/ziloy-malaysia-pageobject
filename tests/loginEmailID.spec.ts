@@ -20,7 +20,7 @@ test.beforeEach("Launch url",async({page})=>{
     
  })
 
-test('Login my account with correct password', async({page})=>{
+test('@sanity Login my account with correct password', async({page})=>{
     await homepage.click_my_login();
     await homepage.clickmy_emailid();
     await homepage.setMyEmail(config.email);
