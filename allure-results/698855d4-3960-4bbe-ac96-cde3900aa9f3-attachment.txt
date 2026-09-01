@@ -1,0 +1,26 @@
+Error while clicking login with password button {
+  error: locator.click: Test timeout of 30000ms exceeded.
+  Call log:
+    - waiting for locator('#passwordlogin_password')
+  
+      at Homepage.click_login_with_password_btn (C:\Users\kokila\Downloads\PageObject\pages\Homepage.ts:74:48)
+      at C:\Users\kokila\Downloads\PageObject\tests\loginEmailID.spec.ts:28:20 {
+    log: [ "  - waiting for locator('#passwordlogin_password')" ],
+    Symbol(step): {
+      location: [Object],
+      category: 'pw:api',
+      title: "Click locator('#passwordlogin_password')",
+      apiName: 'locator.click',
+      params: [Object],
+      group: undefined,
+      stepId: 'pw:api@40',
+      boxedStack: undefined,
+      steps: [],
+      attachmentIndices: [],
+      info: [TestStepInfoImpl],
+      complete: [Function: complete],
+      endWallTime: 1787766911675,
+      error: [Object]
+    }
+  }
+}

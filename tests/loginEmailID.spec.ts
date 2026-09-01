@@ -24,4 +24,23 @@ test('@sanity Login my account with correct password', async({page})=>{
     await homepage.click_my_login();
     await homepage.clickmy_emailid();
     await homepage.setMyEmail(config.email);
+    await homepage.click_emailid_continue();
+    await homepage.click_login_with_password_btn();
+    await homepage.set_password_input_field(config.password);
+    await homepage.click_login_btn_final()
+    
+    //assertion
+    await homepage.loggedin_success_validator();
+   
+})
+
+test('@negative Logged in account with correct email id and incorrect password',async({page})=>{
+    await homepage.click_my_login();
+    await homepage.clickmy_emailid();
+    await homepage.setMyEmail(config.email);
+    await homepage.click_emailid_continue();
+    await homepage.click_login_with_password_btn();
+    await homepage.set_password_input_field(config.invalid_password);
+     await homepage.click_login_btn_final()
+
 })

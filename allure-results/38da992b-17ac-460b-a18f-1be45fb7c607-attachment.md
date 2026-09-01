@@ -1,0 +1,96 @@
+# Instructions
+
+- Following Playwright test failed.
+- Explain why, be concise, respect Playwright best practices.
+- Provide a snippet of code with the fix, if possible.
+
+# Test info
+
+- Name: loginEmailID.spec.ts >> @sanity Login my account with correct password
+- Location: tests\loginEmailID.spec.ts:23:5
+
+# Error details
+
+```
+Test timeout of 30000ms exceeded while running "beforeEach" hook.
+```
+
+```
+Error: page.goto: Test timeout of 30000ms exceeded.
+Call log:
+  - navigating to "https://app.tst.ziloy.my/", waiting until "load"
+
+```
+
+# Page snapshot
+
+```yaml
+- main [ref=e9]:
+  - generic [ref=e10]:
+    - generic [ref=e14]:
+      - generic [ref=e15]: Integrative & personalised mental well-being
+      - generic [ref=e16]: Accessible, specialised integrative mental healthcare in seconds.
+    - generic [ref=e17]:
+      - generic [ref=e20] [cursor=pointer]:
+        - generic [ref=e21]:
+          - combobox [disabled] [ref=e23]
+          - generic "en" [ref=e24]
+        - img [ref=e25]:
+          - img [ref=e26]
+      - generic [ref=e30]:
+        - generic [ref=e31]:
+          - img "Guest User Icon" [ref=e32]
+          - generic [ref=e34]:
+            - generic [ref=e35]: Start your mental health journey with us.
+            - generic [ref=e36]:
+              - button "Login" [ref=e37] [cursor=pointer]
+              - button "Sign up" [ref=e38] [cursor=pointer]
+            - generic [ref=e41]: OR
+        - generic [ref=e43]:
+          - button "Continue As Guest" [ref=e44] [cursor=pointer]
+          - button "Continue with Google" [ref=e45] [cursor=pointer]:
+            - img [ref=e47]
+            - generic [ref=e53]: Continue with Google
+          - button "Continue with Apple" [ref=e54] [cursor=pointer]:
+            - img [ref=e55]
+            - text: Continue with Apple
+        - generic [ref=e57]:
+          - generic [ref=e58]: Contact Care Navigator at +60-3-2738-9999
+          - generic [ref=e59]: or write to us on care@ziloy.my
+```
+
+# Test source
+
+```ts
+  1  | 
+  2  | import{test,expect}from '@playwright/test';
+  3  | import { Testconfig } from '../testconfig';
+  4  | import { Homepage } from '../pages/Homepage';
+  5  | import { Randomdatautils } from '../utils/randomDataGenerator';
+  6  | //Variable to  create object for the class files
+  7  | let config:Testconfig;
+  8  | let homepage:Homepage;
+  9  | 
+  10 | test.beforeEach("Launch url",async({page})=>{
+  11 |     //object creation
+  12 |     config=new Testconfig();
+  13 |     homepage=new Homepage(page);
+  14 | 
+> 15 |     await page.goto(config.appurl);
+     |                ^ Error: page.goto: Test timeout of 30000ms exceeded.
+  16 | })
+  17 | 
+  18 |  test.afterEach(async({page})=>{
+  19 |     await page.waitForTimeout(2000);
+  20 |     
+  21 |  })
+  22 | 
+  23 | test('@sanity Login my account with correct password', async({page})=>{
+  24 |     await homepage.click_my_login();
+  25 |     await homepage.clickmy_emailid();
+  26 |     await homepage.setMyEmail(config.email);
+  27 |     await homepage.click_emailid_continue();
+  28 |     await homepage.click_login_with_password_btn();
+  29 | })
+  30 | 
+```

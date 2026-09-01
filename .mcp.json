@@ -1,0 +1,15 @@
+{
+  "servers": {
+    "jira": {
+      "command": "node",
+      "args": [
+        "jira-mcp-server.js"
+      ],
+      "env": {
+        "JIRA_URL": "https://8kmiles.atlassian.net",
+        "JIRA_EMAIL": "kokila.velsamy@securekloud.com",
+        "JIRA_TOKEN": "ATATT3xFfGF0M1192_psHFBPyupsRCo8VQsm14pXnvmZ6MaoeZlfQYsQHPqbw1Ni4T0-kJxWE23Hk0G-fwrU4VyF09NslsyknvVJhtg8FD7fPIGvUtdS2pkXrSfBsZjFSn3cQ_RHyBiGFRzpdaALM3zzYe4cm7fhv_6jv5enJ5yXu6hQjIrfeeA=F7CA8C2D"
+      }
+    }
+  }
+}

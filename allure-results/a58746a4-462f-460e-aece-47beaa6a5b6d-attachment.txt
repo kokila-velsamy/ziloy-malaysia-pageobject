@@ -1,0 +1,28 @@
+Error while clicking with login button {
+  error: locator.click: Test timeout of 30000ms exceeded.
+  Call log:
+    - waiting for getByRole('button', { name: 'Login' }).nth(14)
+  
+      at Homepage.click_login_btn_final (C:\Users\kokila\Downloads\PageObject\pages\Homepage.ts:91:40)
+      at C:\Users\kokila\Downloads\PageObject\tests\loginEmailID.spec.ts:30:20 {
+    log: [
+      "  - waiting for getByRole('button', { name: 'Login' }).nth(14)"
+    ],
+    Symbol(step): {
+      location: [Object],
+      category: 'pw:api',
+      title: "Click getByRole('button', { name: 'Login' }).nth(14)",
+      apiName: 'locator.click',
+      params: [Object],
+      group: undefined,
+      stepId: 'pw:api@42',
+      boxedStack: undefined,
+      steps: [],
+      attachmentIndices: [],
+      info: [TestStepInfoImpl],
+      complete: [Function: complete],
+      endWallTime: 1787767837214,
+      error: [Object]
+    }
+  }
+}

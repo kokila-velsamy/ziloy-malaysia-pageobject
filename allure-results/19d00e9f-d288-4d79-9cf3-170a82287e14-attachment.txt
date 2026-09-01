@@ -1,0 +1,13 @@
+Error while clicking with login button {
+  error: TypeError: Cannot read properties of undefined (reading 'click')
+      at Homepage.click_login_btn_final (C:\Users\kokila\Downloads\PageObject\pages\Homepage.ts:90:40)
+      at C:\Users\kokila\Downloads\PageObject\tests\loginEmailID.spec.ts:30:20
+      at C:\Users\kokila\Downloads\PageObject\node_modules\playwright\lib\worker\workerProcessEntry.js:1662:9
+      at C:\Users\kokila\Downloads\PageObject\node_modules\playwright\lib\worker\workerProcessEntry.js:1154:11
+      at TimeoutManager.withRunnable (C:\Users\kokila\Downloads\PageObject\node_modules\playwright\lib\worker\workerProcessEntry.js:425:14)
+      at TestInfoImpl._runWithTimeout (C:\Users\kokila\Downloads\PageObject\node_modules\playwright\lib\worker\workerProcessEntry.js:1152:7)
+      at C:\Users\kokila\Downloads\PageObject\node_modules\playwright\lib\worker\workerProcessEntry.js:1660:7
+      at WorkerMain._runTest (C:\Users\kokila\Downloads\PageObject\node_modules\playwright\lib\worker\workerProcessEntry.js:1633:5)
+      at WorkerMain.runTestGroup (C:\Users\kokila\Downloads\PageObject\node_modules\playwright\lib\worker\workerProcessEntry.js:1528:9)
+      at process.<anonymous> (C:\Users\kokila\Downloads\PageObject\node_modules\playwright\lib\common\index.js:1991:25)
+}
